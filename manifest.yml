@@ -1,0 +1,18 @@
+  declared-services:
+    Investment Portfolio-oz:
+      label: fss-portfolio-service
+      plan: fss-portfolio-service-free-plan
+    Instrument Analytics-32:
+      label: fss-instrument-analytics-service
+      plan: fss-instrument-analytics-service-free-plan
+  applications:
+  - path: .
+    memory: 128M
+    instances: 1
+    name: Portfolio-Compute
+    disk_quota: 1024M
+    domain: mybluemix.net
+    services:
+    - Investment Portfolio-oz
+    - Instrument Analytics-32
+    buildpack: python_buildpack
