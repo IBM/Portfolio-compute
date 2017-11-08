@@ -84,7 +84,7 @@ def portfolio_from_csv():
             portfolios[d[5]].append(hldg)
     
     #Send each portfolio and its holdings to the investment portfolio service
-    for key, value in portfolios.iteritems():
+    for key, value in portfolios.items():
         my_portfolio = {
             "timestamp": '{:%Y-%m-%dT%H:%M:%S.%fZ}'.format(datetime.datetime.now()) ,
             'closed':False,
@@ -185,7 +185,7 @@ def compute_unit_tests():
                             r[a] = j['values'][0][a]
                         r["date"] = j['values'][0]['date']
                         h = [row for row in holdings[0]['holdings'] if j['instrument']==row['instrumentId']][0]
-                        for key,value in h.iteritems():
+                        for key,value in h.items():
                             if key not in ['instrumentId']:
                                 r[key] = value
                         results.append(r)
