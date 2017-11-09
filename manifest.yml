@@ -1,8 +1,8 @@
   declared-services:
-    Investment Portfolio-oz:
+    Investment-Portfolio:
       label: fss-portfolio-service
       plan: fss-portfolio-service-free-plan
-    Instrument Analytics-32:
+    Instrument-Analytics:
       label: fss-instrument-analytics-service
       plan: fss-instrument-analytics-service-free-plan
   applications:
@@ -13,6 +13,6 @@
     disk_quota: 1024M
     domain: mybluemix.net
     services:
-    - Investment Portfolio-oz
-    - Instrument Analytics-32
+    - Investment-Portfolio
+    - Instrument-Analytics
     buildpack: python_buildpack
