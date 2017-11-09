@@ -5,7 +5,7 @@ $('#show_analytics').click(function() {
   });
 
 $('#downloadtoCSV').click(function() {
-    JSONToCSV(AjaxResponse,true);
+    JSONToCSV(AjaxResponse);
   });
 //Populate Analytics Selector
 $("#analytics").hide();
@@ -73,7 +73,7 @@ $('.run-analysis.Button').click(function(){
         success: function(data,input_parameters) {
             console.log(data);
             if ($("input[name='download_or_here']:checked").val() == "download"){
-                JSONToCSV(data,true)
+                JSONToCSV(data)
                 $('.sandboxtwo').removeClass('loading');
                 $('.loader').removeClass('active');
             }else{
@@ -196,55 +196,19 @@ function AnalyticName(analytic){
     return text;
 }
 //source: http://jsfiddle.net/hybrid13i/JXrwM/
-function JSONToCSV(JSONData, ShowLabel) {
-    //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
-    var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
-    var CSV = '';    
-    //This condition will generate the Label/Header
-    if (ShowLabel) {
-        var row = "";   
-        //This loop will extract the label from 1st index of on array
-        for (var index in arrData[0]) {
-            //Now convert each value to string and comma-seprated
-            row += index + ',';
-        }
-        row = row.slice(0, -1);
-        //append Label row with line break
-        CSV += row + '\r\n';
-    }
-    //1st loop is to extract each row
-    for (var i = 0; i < arrData.length; i++) {
-        var row = "";
-        //2nd loop will extract each column and convert it in string comma-seprated
-        for (var index in arrData[i]) {
-            row += '"' + arrData[i][index] + '",';
-        }
-        row.slice(0, row.length - 1);
-        //add a line break after each row
-        CSV += row + '\r\n';
-    }
-    if (CSV == '') {        
-        alert("Invalid data");
-        return;
-    }   
-    
-    //Generate a file name
-    var portfolioName = $("#portfolio_name :selected").text();
-    var fileName = "PortfolioAnalytics_" + portfolioName.replace(/ /g,"_");
-    //this will remove the blank-spaces from the title and replace it with an underscore
-    
-    //Initialize file format you want csv or xls
-    var uri = 'data:text/csv;charset=utf-8,' + escape(CSV); 
-    
-    //this trick will generate a temp <a /> tag
-    var link = document.createElement("a");    
+function JSONToCSV(JSONData) {
+   var arrData = typeof JSONData != ‘object’ ? JSON.parse(JSONData) : JSONData;
+    const header = Object.keys(arrData[0]);
+    let csv = arrData.map(row => header.map(fieldName => JSON.stringify(row[fieldName], (key, value) => value === null ? ‘’ : value)).join(‘,’))
+    csv.unshift(header.join(‘,’))
+    csv = csv.join(‘\r\n’)
+    var portfolioName = $(“#portfolio_name :selected”).text();
+    var fileName = “PortfolioAnalytics_” + portfolioName.replace(/ /g,“_”);
+    var uri = ‘data:text/csv;charset=utf-8,’ + escape(csv);
+    var link = document.createElement(“a”);
     link.href = uri;
-    
-    //set the visibility hidden so it will not effect on your web-layout
-    link.style = "visibility:hidden";
-    link.download = fileName + ".csv";
-    
-    //this part will append the anchor tag and remove it after automatic click
+    link.style = “visibility:hidden”;
+    link.download = fileName + “.csv”;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
