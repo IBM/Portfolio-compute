@@ -105,7 +105,7 @@ CRED_PORTFOLIO_PWD_R=
 
 # Instrument Analytics
 IA_uri=https://fss-analytics.mybluemix.net/
-IA_accessToken=
+IA_access_token=
   ```
 
 ## 5. Run Application
