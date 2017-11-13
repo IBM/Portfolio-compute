@@ -27,7 +27,7 @@ Use the ``Deploy to Bluemix`` button **OR** create the services and run ``Run Lo
 
 ## Deploy to Bluemix
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/SeidProjects/Portfolio.Compute)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/IBM/Portfolio-compute)
 
 ## Running the Application Locally
 Follow these steps to setup and run this developer journey. The steps are described in detail below.
@@ -117,7 +117,7 @@ cd into this project's root directory
 
 ## 6. Upload Holdings
 
-Once the application is running, the first step is to upload a file that will be used to create a portfolio or a series of portfolios in the Investment Portfolio service. We use the file format of the Algorithmics Risk Service (ARS) import file as many production clients are already used to that format. You can find an example file in this repo labelled "Blue Chip Portfolio". Alternatively, the file "ICFS_SAMPLE_POSITIONS.csv" contains the superset of instruments that the Instrument Analytics service supports. 
+Once the application is running, the first step is to upload a file that will be used to create a portfolio or a series of portfolios in the Investment Portfolio service. We use the file format of the Algorithmics Risk Service (ARS) import file as many production clients are already used to that format. You can find an example file in this repo labelled "Blue Chip Portfolio". Alternatively, the file "ICFS_SAMPLE_POSITIONS.csv" contains the superset of instruments that the Instrument Analytics service supports.
 
 - The column labeled "UNIQUE ID" must refer to the unique identifier of the asset in our system.
 - The "NAME" column will hold the display name of the asset.
