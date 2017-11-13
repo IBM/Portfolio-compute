@@ -18,7 +18,7 @@ $("#portfolio_file").change(function(e) {
     if($.inArray(ext, ["csv"]) == -1) {
         alert('Upload CSV');
         return false;
-    }   
+    }
     if (e.target.files != undefined) {
         var reader = new FileReader();
         reader.onload = function(e) {
@@ -38,14 +38,14 @@ $("#portfolio_file").change(function(e) {
             });
         };
     reader.readAsText(e.target.files.item(0));
-    }  
+    }
     return false;
 });
 //check user input and process, generate result in tables
 $('.run-analysis.Button').click(function(){
     var Portfolio = $('.enter-portfolio select').find(":selected").text();
     var Portfolio = JSON.stringify(Portfolio);
-    var selected = [];                
+    var selected = [];
     $("input:checkbox[name=analytics]:checked").each(function() {
            selected.push($(this).val());
     });
@@ -159,10 +159,10 @@ function AnalyticName(analytic){
             break
         case "THEO/Yield":
             text = "Yield";
-            break   
+            break
         case "THEO/Macaulay Duration":
             text = "Macaulay Duration";
-            break             
+            break
         case "THEO/Adjusted Duration":
             text = "Adjusted Duration";
             break
@@ -189,26 +189,26 @@ function AnalyticName(analytic){
             break
         case "THEO/Vega":
             text = "Vega";
-            break                             
-        default: 
+            break
+        default:
             text = analytic;
     }
     return text;
 }
 //source: http://jsfiddle.net/hybrid13i/JXrwM/
 function JSONToCSV(JSONData) {
-   var arrData = typeof JSONData != ‘object’ ? JSON.parse(JSONData) : JSONData;
+   var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
     const header = Object.keys(arrData[0]);
-    let csv = arrData.map(row => header.map(fieldName => JSON.stringify(row[fieldName], (key, value) => value === null ? ‘’ : value)).join(‘,’))
-    csv.unshift(header.join(‘,’))
-    csv = csv.join(‘\r\n’)
-    var portfolioName = $(“#portfolio_name :selected”).text();
-    var fileName = “PortfolioAnalytics_” + portfolioName.replace(/ /g,“_”);
-    var uri = ‘data:text/csv;charset=utf-8,’ + escape(csv);
-    var link = document.createElement(“a”);
+    let csv = arrData.map(row => header.map(fieldName => JSON.stringify(row[fieldName], (key, value) => value === null ? "" : value)).join(','))
+    csv.unshift(header.join(','))
+    csv = csv.join('\r\n')
+    var portfolioName = $("#portfolio_name :selected").text();
+    var fileName = "PortfolioAnalytics_" + portfolioName.replace(/ /g,"_");
+    var uri = 'data:text/csv;charset=utf-8,' + escape(csv);
+    var link = document.createElement("a");
     link.href = uri;
-    link.style = “visibility:hidden”;
-    link.download = fileName + “.csv”;
+    link.style = "visibility:hidden";
+    link.download = fileName + ".csv";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
