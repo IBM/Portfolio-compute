@@ -1,0 +1,51 @@
+{
+    "name": "Computing Analytics on an Investment Portfolio",
+    "description": "Access full revaluation models to compute fair price and sensitivities on financial securities.",
+    "thumbnailURL": "blueprint/thumbnail.svg",
+    "appIconURL": "blueprint/appicon.svg",
+    "previewURLs": [],
+    "type": "WEB",
+    "tags": [
+        "finance"
+    ],
+    "demoURL": "https://portfolio-compute.mybluemix.net",
+    "generators": {
+        "python": [
+            "generator-starterkit-content-downloader",
+            "generator-ibm-cloud-enablement",
+            "generator-ibm-service-enablement",
+            "generator-git-starterkit-credentials-builder"
+        ]
+    },
+    "generatorOptions": {
+        "generator-git-starterkit-credentials-builder": {
+            "registry": "https://npm-registry.whitewater.ibm.com",
+            "scope": "@arf",
+            "version": "0.0.x"
+        },
+        "generator-starterkit-content-downloader": {
+            "registry": "https://npm-registry.whitewater.ibm.com",
+            "scope": "@arf",
+            "version": "0.0.x"
+        },
+        "generator-ibm-cloud-enablement": {
+            "version": "0.0.x"
+        },
+        "generator-ibm-service-enablement": {
+            "version": "0.0.x"
+        }
+    },
+    "requiredCapabilities": [
+        "instrumentAnalytics",
+        "investmentPortfolio"
+    ],
+    "requiredCapabilitiesURLs": {
+        "instrumentAnalytics": "https://console.bluemix.net/docs/services/InstrumentAnalytics",
+        "investmentPortfolio": "https://console.bluemix.net/docs/services/InvestmentPortfolio"
+    },
+    "servicePlans": {
+        "instrumentAnalytics": "fss-instrument-analytics-service-free-plan",
+        "investmentPortfolio": "fss-portfolio-service-free-plan"
+    },
+    "email": "cloud@us.ibm.com"
+}
