@@ -198,5 +198,8 @@ def compute_unit_tests():
     print("Unit testing completed. Total time elapsed: " + str(datetime.datetime.now() - start_time))
     return Response(json.dumps(results), mimetype='application/json')
 
+def test():
+    analytics = ['THEO/Price','THEO/Value']
+
 if __name__ == '__main__':
-    app.run(host=host, port=port)
+    get_unit_test_portfolios()
