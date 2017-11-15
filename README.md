@@ -47,9 +47,9 @@ Follow these steps to setup and run this developer journey. The steps are descri
 
 ## 1. Clone the repo
 
-Clone the `Build-an-optimal-investment-portfolio code` locally. In a terminal, run:
+Clone the `Portfolio Analytics Computation code` locally. In a terminal, run:
 
-  `$ git clone https://github.com/SeidProjects/Portfolio.Compute`
+  `$ git clone https://github.com/IBM/Portfolio-compute.git`
 
 ## 2. Create Bluemix services
 
@@ -97,7 +97,7 @@ You will need to update the credentials with the Bluemix credentials for each of
 
 The `.env` file will look something like the following:
 
-  ```none
+```none
 # Investment Portfolio
 CRED_PORTFOLIO_USERID_W=
 CRED_PORTFOLIO_PWD_W=
@@ -107,7 +107,7 @@ CRED_PORTFOLIO_PWD_R=
 # Instrument Analytics
 IA_uri=https://fss-analytics.mybluemix.net/
 IA_access_token=
-  ```
+```
 
 ## 5. Run Application
 
