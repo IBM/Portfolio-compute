@@ -19,8 +19,8 @@ When the reader has completed this journey, they will understand how to:
 </p>
 
 ## Included Components
-+ Bluemix Investment Portfolio
-+ Bluemix Instrument Analytics
++ IBM Cloud Investment Portfolio
++ IBM Cloud Instrument Analytics
 
 ## Steps
 
@@ -38,7 +38,7 @@ Follow these steps to setup and run this developer journey. The steps are descri
 
 ## Steps to run locally
 1. [Clone the repo](#1-clone-the-repo)
-2. [Create Bluemix services](#2-create-bluemix-services)
+2. [Create IBM Cloud services](#2-create-bluemix-services)
 3. [Configure Manifest file](#3-configure-manifest)
 4. [Configure .env file](#4-configure-env-file)
 5. [Run Application](#5-run-application)
@@ -51,7 +51,7 @@ Clone the `Portfolio Analytics Computation code` locally. In a terminal, run:
 
   `$ git clone https://github.com/IBM/Portfolio-compute.git`
 
-## 2. Create Bluemix services
+## 2. Create IBM Cloud services
 
 Create the following services:
 
@@ -60,7 +60,7 @@ Create the following services:
 
 ## 3. Configure Manifest file
 
-Edit the `manifest.yml` file in the folder that contains your code and replace with a unique name for your application. The name that you specify determines the application's URL, such as `your-application-name.mybluemix.net`. Additionally - update the service names so they match what you have in Bluemix. The relevant portion of the `manifest.yml` file looks like the following:
+Edit the `manifest.yml` file in the folder that contains your code and replace with a unique name for your application. The name that you specify determines the application's URL, such as `your-application-name.mybluemix.net`. Additionally - update the service names so they match what you have in the IBM Cloud. The relevant portion of the `manifest.yml` file looks like the following:
 
   ```none
   declared-services:
@@ -93,7 +93,7 @@ Create a `.env` file in the root directory of your clone of the project reposito
 
   **NOTE** Most files systems regard files with a "." at the front as hidden files.  If you are on a Windows system, you should be able to use either [GitBash](https://git-for-windows.github.io/) or [Xcopy](https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/xcopy.mspx?mfr=true)
 
-You will need to update the credentials with the Bluemix credentials for each of the services you created in [Step 2](#2-create-bluemix-services).
+You will need to update the credentials with the IBM Cloud credentials for each of the services you created in [Step 2](#2-create-bluemix-services).
 
 The `.env` file will look something like the following:
 
@@ -149,7 +149,7 @@ Some notes:
 
 # Troubleshooting
 
-* To troubleshoot your Bluemix application, use the logs. To see the logs, run:
+* To troubleshoot your IBM Cloud application, use the logs. To see the logs, run:
 
 ```bash
 cf logs <application-name> --recent
@@ -161,6 +161,55 @@ cf logs <application-name> --recent
 python InvestmentPortfolio.py
 python InstrumentAnalytics.py
 ```
+
+## Privacy Notice
+
+This web application includes code to track deployments to [IBM Bluemix](https://www.bluemix.net/) runtimes and services. The following information is sent to a [Metrics Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
+
+* Application Name (`application_name`)
+* Application GUID (`application_id`)
+* Application instance index (`instance_index`)
+* Space ID (`space_id`)
+* Application Version (`application_version`)
+* Application URIs (`application_uris`)
+* Labels of bound services
+* Number of instances for each bound service
+
+This data is collected from the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Bluemix. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
+
+### Disabling Deployment Tracking
+
+Disabling the deployment tracker varies based on sample application implementation. Please include specific disabling instructions within your README's Privacy Notice.
+
+# Privacy Notice
+
+If using the Deploy to Bluemix button some metrics are tracked, the following
+information is sent to [Deployment Tracker](https://github.com/IBM-Bluemix/cf-deployment-tracker-service) and 
+[Metrics collector](https://github.com/IBM/metrics-collector-service) service on each deployment:
+
+* Python package version
+* Python repository URL
+* Application Name (application_name)
+* Application GUID (application_id)
+* Application instance index number (instance_index)
+* Space ID (space_id)
+* Application Version (application_version)
+* Application URIs (application_uris)
+* Cloud Foundry API (cf_api)
+* Labels of bound services
+* Number of instances for each bound service and associated plan information
+
+This data is collected from the setup.py and repository.yaml file in the sample application and the ``VCAP_APPLICATION``
+and ``VCAP_SERVICES`` environment variables in IBM Bluemix and other Cloud Foundry platforms. This
+data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to
+measure the usefulness of our examples, so that we can continuously improve the content we offer
+to you. Only deployments of sample applications that include code to ping the Deployment Tracker
+service will be tracked.
+
+## Disabling Deployment Tracking
+
+To disable tracking, simply remove ``cf_deployment_tracker.track()`` and ``metrics_tracker_client.track()`` from the
+``run.py`` file in the top level directory.
 
 # License
 

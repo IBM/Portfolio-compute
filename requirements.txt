@@ -1,3 +1,4 @@
 Flask==0.11.1
 requests==2.11.1
 python-dotenv
+metrics-tracker-client>=1.0.9
