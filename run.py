@@ -1,4 +1,5 @@
 # Written by Rob Seidman on 10/03/2017
+import metrics_tracker_client
 from flask import Flask, render_template, jsonify, json, url_for, request, redirect, Response, flash, abort, make_response, send_file
 import requests
 import io
@@ -199,4 +200,5 @@ def compute_unit_tests():
     return Response(json.dumps(results), mimetype='application/json')
 
 if __name__ == '__main__':
+    metrics_tracker_client.track()
     app.run(host=host, port=port)
