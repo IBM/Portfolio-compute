@@ -4,6 +4,6 @@ event_organizer: dev-journeys
 runtimes: 
   - Cloud Foundry
 services: 
-  - investment portfolio
-  - instrument analytics
+  - Investment Portfolio
+  - Instrument Analytics
 language: python
