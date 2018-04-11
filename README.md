@@ -14,9 +14,13 @@ When the reader has completed this journey, they will understand how to:
 * Construct a payload to generate analytics on a portfolio
 * Construct a user interface to display results, or download to a CSV file.
 
-<p align="center">
-  <img src="static/images/PortfolioComputeArch.png">
-</p>
+![](static/images/architecture.png)
+
+## Flow
+
+1. User uploads a portfolio for analysis.
+2. User selects a portfolio and which analytic to compute on the portfolio.
+3. The portfolio and analytic choices are sent to the Instrument Analytics service. Computational results are returned to the browser or downloaded in CSV format.
 
 ## Included Components
 + IBM Cloud Investment Portfolio
