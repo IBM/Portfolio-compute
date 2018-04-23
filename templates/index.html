@@ -39,7 +39,7 @@
       </div>
       <div class="article-input__triple">
         <div class="article-input__portfolio">
-          
+
           <div class="enter-portfolio">
             <div class="article-input__header">
               Select Portfolio
@@ -54,86 +54,86 @@
             &nbsp;&nbsp;
           </div>
 
-            <div class="article-input__header">
-              Upload a new portfolio
-            </div>
-              <input type="file" id="portfolio_file" class="" aria-label="upload portfolio">
-             
-              <div>
-                <br>
-                  <label><input type="radio" name="download_or_here" checked="true" value="download" ><b class="radio-text">Straight to CSV</b></label>
-                </div>              
+          <div class="article-input__header">
+            Upload a new portfolio
+          </div>
+          <input type="file" id="portfolio_file" class="" aria-label="upload portfolio">
 
-              <div class="radio">
-                <label><input type="radio" name="download_or_here" value="here"><b class="radio-text">Results in browser</b></label>
-              </div>
-              <br>
-              <button id="show_analytics" class="upload Button" aria-label="Run Analysis">
+          <div>
+            <br>
+            <label><input type="radio" name="download_or_here" checked="true" value="download" ><b class="radio-text">Straight to CSV</b></label>
+          </div>
+
+          <div class="radio">
+            <label><input type="radio" name="download_or_here" value="here"><b class="radio-text">Results in browser</b></label>
+          </div>
+          <br>
+          <button id="show_analytics" class="upload Button" aria-label="Run Analysis">
                 Select Analytics
               </button>
-              <div id="analytics">
-                <br>
-                <h4>Specify which analytics you'd like to compute:</h4>
-                <table id="analytics_tbl">
-                <tr>
-                    <th>
-                      Valuation
-                    </th>
-                    <th>
-                      Fixed Income Analytics
-                    </th>
-                    <th>
-                      Greeks and Sensitivity
-                    </th>
-                    <th></th>
-                  </tr>
-                  <tr>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Price' checked='checked'>Price (Clean Price)<br></td>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Accrued Interest'>Accrued Interest<br></td>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Delta'>Delta<br></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Value' checked='checked'>Value (Dirty Price)<br></td>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Yield'>Yield<br></td>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Domestic Rho'>Domestic Rho<br></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Exposure'>Exposure<br></td>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Macaulay Duration'>Macaulay Duration<br></td>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Gamma'>Gamma<br></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Adjusted Duration'>Adjusted Duration<br></td>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Theta'>Theta<br></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Effective Duration'>Effective Duration<br></td>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Vega'>Vega<br></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td><br><input type='checkbox' name='analytics' value='THEO/Adjusted Duration2'>Spread Duration<br></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td><br><input type='checkbox' name='Effective Convexity' value='THEO/Effective Convexity'>Effective Convexity<br></td>
-                    <td></td>
-                    <td></td>
-                  </tr>                                                                                                 
-                </table>
-              </div>
-            <div class="article-input__run">
-              <button class="run-analysis Button" aria-label="Run Analysis">Run Analysis</button>
-            </div>
+          <div id="analytics">
+            <br>
+            <h4>Specify which analytics you'd like to compute:</h4>
+            <table id="analytics_tbl">
+              <tr>
+                <th>
+                  Valuation
+                </th>
+                <th>
+                  Fixed Income Analytics
+                </th>
+                <th>
+                  Greeks and Sensitivity
+                </th>
+                <th></th>
+              </tr>
+              <tr>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Price' checked='checked'>Price (Clean Price)<br></td>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Accrued Interest'>Accrued Interest<br></td>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Delta'>Delta<br></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Value' checked='checked'>Value (Dirty Price)<br></td>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Yield'>Yield<br></td>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Domestic Rho'>Domestic Rho<br></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Exposure'>Exposure<br></td>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Macaulay Duration'>Macaulay Duration<br></td>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Gamma'>Gamma<br></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Adjusted Duration'>Adjusted Duration<br></td>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Theta'>Theta<br></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Effective Duration'>Effective Duration<br></td>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Vega'>Vega<br></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><br><input type='checkbox' name='analytics' value='THEO/Adjusted Duration2'>Spread Duration<br></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><br><input type='checkbox' name='Effective Convexity' value='THEO/Effective Convexity'>Effective Convexity<br></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="article-input__run">
+            <button class="run-analysis Button" aria-label="Run Analysis">Run Analysis</button>
+          </div>
         </div>
       </div>
     </div>
@@ -177,7 +177,7 @@
           </p>
         </div>
 
-    </div>
+      </div>
 
       <div class="wii-info__text">
         <h3>
@@ -190,7 +190,8 @@
             Rebalance your portfolio
           </a>
           <p>
-              Rebalance an investment portfolio based on a wide range of objectives and investor preferences such as avoiding sin stocks, focusing on socially responsible investments, or limiting contribution to asset classes, all while minimizing the overall volatility with respect to a benchmark.
+            Rebalance an investment portfolio based on a wide range of objectives and investor preferences such as avoiding sin stocks, focusing on socially responsible investments, or limiting contribution to asset classes, all while minimizing the overall volatility
+            with respect to a benchmark.
           </p>
         </div>
 
@@ -199,93 +200,71 @@
             Stress test your portfolio
           </a>
           <p>
-              Project the potential impact to your portfolio based on the result of a macroeconomic shock and its resulting, correlated effects on the rest of the market.
+            Project the potential impact to your portfolio based on the result of a macroeconomic shock and its resulting, correlated effects on the rest of the market.
           </p>
         </div>
-       
+
         <div class="wii-tile">
           <a href="https://integrate-investment-portfolio.mybluemix.net/" target="_blank">
             Build a new portfolio
           </a>
           <p>
-              Import a new portfolio from your personal brokerage using Quovo.
+            Import a new portfolio from your personal brokerage using Quovo.
           </p>
         </div>
       </div>
     </div>
   </div>
 
-    <div class="tab-content">
-      <div class="tab tab-one" id="tab-one">
+  <div class="tab-content">
+    <div class="tab tab-one" id="tab-one">
 
-        <div class="date">
-          <a>05/17/1978</a>
-          <button id="downloadtoCSV" class="upload Button" aria-label="Run Analysis">
+      <div class="date">
+        <a>05/17/1978</a>
+        <button id="downloadtoCSV" class="upload Button" aria-label="Run Analysis">
             Download to CSV
           </button>
-        </div>
-        
-        <div class="pl-table">
-          <div class="pl-table__header">
-            <div class="tab-title title1">
-              <h3>Projected impact on your portfolio</h3>
-            </div>
+      </div>
+
+      <div class="pl-table">
+        <div class="pl-table__header">
+          <div class="tab-title title1">
+            <h3>Projected impact on your portfolio</h3>
           </div>
-          <div class="port-table__wrapper">
-            <div class="port-table">
-              <table>
-                <thead>
-                  <!--
-                  <tr style="width: 100%">
-                    <th>
-                      Name
-                    </th>
-                    <th>
-                      Company
-                    </th>
-                    <th>
-                      Quantity
-                    </th>
-                    <th>
-                      Current Price
-                    </th>
-                    <th>
-                      Stressed Price
-                    </th>
-                    <th>
-                      Profit/Loss
-                    </th>
-                  </tr>
-                -->
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      a
-                    </td>
-                    <td>
-                      b
-                    </td>
-                    <td>
-                      c
-                    </td>
-                    <td>
-                      d
-                    </td>
-                    <td>
-                      e
-                    </td>
-                    <td>
-                      f
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        </div>
+        <div class="port-table__wrapper">
+          <div class="port-table">
+            <table>
+              <thead>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    a
+                  </td>
+                  <td>
+                    b
+                  </td>
+                  <td>
+                    c
+                  </td>
+                  <td>
+                    d
+                  </td>
+                  <td>
+                    e
+                  </td>
+                  <td>
+                    f
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </body>
 
@@ -294,12 +273,10 @@
 <script src="{{ url_for('static', filename='js/run_analysis.js') }}"></script>
 <script>
   $(document).ready(function() {
-    //$('.tab-bead').width($('.tab-title:nth-child(1)').width() + 24);
     updateText();
   });
 
   $('.new-analysis').click(function() {
-    //$('.sandboxtwo').toggleClass('analysis');
     location.reload();
   });
 </script>
