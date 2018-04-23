@@ -8,7 +8,7 @@ This journey leverages two services:
 - The **Investment Portfolio service** is used to manage and store portfolios and financial security information such as the set of eligible investments, benchmarks, and user portfolios.
 - The **Instruments Analytics service** is used to compute analytics on securities. This service is pre-integrated with market data and leverages a wide set of financial models. These financial models are _cashflow generation models_, meaning they project all cash flow a given security is going to make over its lifespan in order to calculate properties of financial securities such as current value (using present value of the cash flows) or sensitivities (to see how much cashflows change when incremental changes are made to various model inputs).
 
-When the reader has completed this journey, they will understand how to:
+This code pattern is designed for developers with interest in creating financial applications pertaining to investment portfolios.  When the reader has completed this journey, they will understand how to:
 
 * Load and retrieve data from the Investment Portfolio service
 * Construct a payload to generate analytics on a portfolio
@@ -16,33 +16,39 @@ When the reader has completed this journey, they will understand how to:
 
 ![](static/images/architecture.png)
 
-## Flow
+# Flow
 
 1. User uploads a portfolio for analysis.
 2. User selects a portfolio and which analytic to compute on the portfolio.
 3. The portfolio and analytic choices are sent to the Instrument Analytics service. Computational results are returned to the browser or downloaded in CSV format.
 
 ## Included Components
-+ IBM Cloud Investment Portfolio
-+ IBM Cloud Instrument Analytics
++ [IBM Cloud Investment Portfolio]((https://console.ng.bluemix.net/catalog/services/investment-portfolio))
++ [IBM Cloud Instrument Analytics](https://console.bluemix.net/catalog/services/instrument-analytics)
+
+**Note:** these services are free for those who have a Lite account
 
 ## Steps
 
-Use the ``Deploy to Bluemix`` button **OR** create the services and run ``Run Locally``.
+Use the ``Deploy to IBM Cloud`` button **OR** create the services and run ``Run Locally``.
 
-## Deploy to Bluemix
+# Deploy to IBM Cloud
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/IBM/Portfolio-compute)
+Create an [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps) and directly deploy the application using the button bellow.
 
-## Running the Application Locally
+[![Deploy to Bluemix](https://metrics-tracker.mybluemix.net/stats/92bf5d7154053d269fdfde08702e6779/button.svg)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/IBM/Portfolio-compute)
+
+
+# Running the Application Locally
 Follow these steps to setup and run this developer journey. The steps are described in detail below.
 
 ## Prerequisites
+- [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps)
 - [Python](https://www.python.org/downloads/)
 
 ## Steps to run locally
 1. [Clone the repo](#1-clone-the-repo)
-2. [Create IBM Cloud services](#2-create-bluemix-services)
+2. [Create IBM Cloud services](#2-create-ibm-cloud-services)
 3. [Configure Manifest file](#3-configure-manifest)
 4. [Configure .env file](#4-configure-env-file)
 5. [Run Application](#5-run-application)
@@ -57,7 +63,7 @@ Clone the `Portfolio Analytics Computation code` locally. In a terminal, run:
 
 ## 2. Create IBM Cloud services
 
-Create the following services:
+Create the following services in IBM Cloud. These services are part of either `Free` or `Experimental` plan.
 
 * [**Investment Portfolio**](https://console.ng.bluemix.net/catalog/services/investment-portfolio)
 * [**Instrument Analytics**](https://console.bluemix.net/catalog/services/instrument-analytics)
@@ -89,15 +95,15 @@ Edit the `manifest.yml` file in the folder that contains your code and replace w
 
 ## 4. Configure .env file
 
-Create a `.env` file in the root directory of your clone of the project repository by copying the sample `.env.example` file using the following command:
+Create a `.env` file in the root directory of your clone of the project repository by copying the sample `.env.example` file using the following command in terminal:
 
   ```none
   cp .env.example .env
   ```
 
-  **NOTE** Most files systems regard files with a "." at the front as hidden files.  If you are on a Windows system, you should be able to use either [GitBash](https://git-for-windows.github.io/) or [Xcopy](https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/xcopy.mspx?mfr=true)
+  **NOTE** Most files systems regard files with a "." at the front as hidden files.  If you are on a Windows system, you should be able to use either [GitBash](https://git-for-windows.github.io/) or [Xcopy](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/xcopy)
 
-You will need to update the credentials with the IBM Cloud credentials for each of the services you created in [Step 2](#2-create-bluemix-services).
+You will need to update the credentials with the IBM Cloud credentials for each of the services you created in [Step 2](#2-create-ibm-cloud-services).
 
 The `.env` file will look something like the following:
 
@@ -115,7 +121,7 @@ IA_access_token=
 
 ## 5. Run Application
 
-cd into this project's root directory
+In your terminal, cd into this project's root directory
 + Run `pip install -r requirements.txt` to install the app's dependencies
 + Run `python run.py`
 + Access the running app in a browser at <http://0.0.0.0:8080/>
@@ -168,52 +174,28 @@ python InstrumentAnalytics.py
 
 ## Privacy Notice
 
-This web application includes code to track deployments to [IBM Bluemix](https://www.bluemix.net/) runtimes and services. The following information is sent to a [Metrics Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
-
-* Application Name (`application_name`)
-* Application GUID (`application_id`)
-* Application instance index (`instance_index`)
-* Space ID (`space_id`)
-* Application Version (`application_version`)
-* Application URIs (`application_uris`)
-* Labels of bound services
-* Number of instances for each bound service
-
-This data is collected from the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Bluemix. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
-
-### Disabling Deployment Tracking
-
-Disabling the deployment tracker varies based on sample application implementation. Please include specific disabling instructions within your README's Privacy Notice.
-
-# Privacy Notice
-
-If using the Deploy to Bluemix button some metrics are tracked, the following
-information is sent to [Deployment Tracker](https://github.com/IBM-Bluemix/cf-deployment-tracker-service) and 
-[Metrics collector](https://github.com/IBM/metrics-collector-service) service on each deployment:
+This web application includes metrics tracker package configured to track deployments to [IBM Cloud](https://www.bluemix.net/) and other platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
 
 * Python package version
 * Python repository URL
-* Application Name (application_name)
-* Application GUID (application_id)
-* Application instance index number (instance_index)
-* Space ID (space_id)
-* Application Version (application_version)
-* Application URIs (application_uris)
-* Cloud Foundry API (cf_api)
-* Labels of bound services
+* Application Name (`application_name`)
+* Application GUID (`application_id`)
+* Application instance index number (`instance_index`)
+* Space ID (`space_id`) or OS username
+* Application Version (`application_version`)
+* Application URIs (`application_uris`)
+* Cloud Foundry API (`cf_api`)
+* Labels and names of bound services
 * Number of instances for each bound service and associated plan information
+* Metadata in the `repository.yaml` file
 
-This data is collected from the setup.py and repository.yaml file in the sample application and the ``VCAP_APPLICATION``
-and ``VCAP_SERVICES`` environment variables in IBM Bluemix and other Cloud Foundry platforms. This
-data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to
-measure the usefulness of our examples, so that we can continuously improve the content we offer
-to you. Only deployments of sample applications that include code to ping the Deployment Tracker
-service will be tracked.
+This data is collected from the `run.py` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Cloud and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Cloud to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
 
-## Disabling Deployment Tracking
 
-To disable tracking, simply remove ``cf_deployment_tracker.track()`` and ``metrics_tracker_client.track()`` from the
-``run.py`` file in the top level directory.
+### Disabling Deployment Tracking
+
+To disable tracking, simply remove ``metrics_tracker_client.track()`` from the ``run.py`` file in the top level directory.
+
 
 # License
 

@@ -101,7 +101,7 @@ def Get_Portfolios_by_Selector(selector,value):
 
 def Get_Holdings_by_Selector(portfolio,selector,value):
     """
-    Retreives portfolio data by calling the Investment Portfolio service
+    Retreives portfolio holdings data by calling the Investment Portfolio service
     """
     print ("Get Portfolios by Selector")
     #call the url
@@ -192,7 +192,7 @@ def Delete_Portfolio(portfolio_name,timestamp,rev):
 
 def Delete_Portfolio_Holdings(portfolio_name,timestamp,rev):
     """
-    Deletes a portfolio.
+    Deletes portfolio holdings.
     """
     BASEURL = "https://investment-portfolio.mybluemix.net/api/v1/portfolios/" + str(portfolio_name) + "/holdings/" + str(timestamp) + "?rev=" + str(rev)
     print(BASEURL)

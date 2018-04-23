@@ -18,7 +18,7 @@ import argparse
 import os
 from dotenv import load_dotenv
 
-#Simulated Instrument Analytics service credentials
+#Instrument Analytics service credentials
 if 'VCAP_SERVICES' in os.environ:
     vcap_servicesData = json.loads(os.environ['VCAP_SERVICES'])
     # Log the fact that we successfully found some service information.
@@ -32,11 +32,11 @@ else:
     load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
     uri=os.environ.get("IA_uri")
     access_token=os.environ.get("IA_access_token")
-    
+
 
 def Compute_InstrumentAnalytics(instrument_ids, analytics=None):
     """
-    Retreives the Simulated Instrument Analytics service data, pass the instrument_id and scernario file
+    Retreives the Instrument Analytics service data, pass the instrument_id and scernario file
     """
     #print for logging purpose
     print ("Compute Instrument Analytics")
