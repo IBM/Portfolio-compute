@@ -129,7 +129,7 @@ In your terminal, cd into this project's root directory
 
 ## 6. Upload Holdings
 
-Once the application is running, the first step is to upload a file that will be used to create a portfolio or a series of portfolios in the Investment Portfolio service. We use the file format of the Algorithmics Risk Service (ARS) import file as many production clients are already used to that format. You can find an example file in this repo labelled "Blue Chip Portfolio". Alternatively, the file "ICFS_SAMPLE_POSITIONS.csv" contains the superset of instruments that the Instrument Analytics service supports.
+Once the application is running, the first step is to upload a file that will be used to create a portfolio or a series of portfolios in the Investment Portfolio service. We use the file format of the Algorithmics Risk Service (ARS) import file as many production clients are already used to that format. You can find an example file in this repo labelled "Blue Chip Portfolio". Alternatively, the file `ICFS_SAMPLE_POSITIONS.csv contains the superset of instruments that the Instrument Analytics service supports.
 
 - The column labeled "UNIQUE ID" must refer to the unique identifier of the asset in our system.
 - The "NAME" column will hold the display name of the asset.
@@ -139,7 +139,7 @@ Once the application is running, the first step is to upload a file that will be
 The code will create a portfolio for each unique element found in the "PORTFOLIO" column. Future releases of this code will take into account a portfolio hierarchy, but currently each portfolio is entirely independent of each other.
 
 Some notes:
-- The portfolio will be loaded as 500-asset chunks as there are currently limitations on POST request sizing. **This means you shouldn't use the 'latest=True'parameter when requesting calculations from the Instrument Analytics service!**
+- The portfolio will be loaded as 500-asset chunks as there are currently limitations on POST request sizing. **This means you shouldn't use the 'latest=True' parameter when requesting calculations from the Instrument Analytics service!**
 - The portfolio will be tagged as type = 'unit test portfolio' to distinguish between any other portfolios that may exist in the system.
 
 *Note: You can navigate to /api/unit_test_delete to delete all portfolios that have been loaded into the service using this application. Specifically, it looks for portfolios with "type = unit test portfolio". You can always start over this way, but be careful to not access this if you've done considerable work.*
