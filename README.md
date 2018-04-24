@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/IBM/Portfolio-compute.svg?branch=master)](https://travis-ci.org/IBM/Portfolio-compute)
+![IBM Cloud Deployments](https://metrics-tracker.mybluemix.net/stats/92bf5d7154053d269fdfde08702e6779/badge.svg)
 
 # Portfolio Analytics Computation
 
@@ -23,7 +24,7 @@ This code pattern is designed for developers with interest in creating financial
 3. The portfolio and analytic choices are sent to the Instrument Analytics service. Computational results are returned to the browser or downloaded in CSV format.
 
 ## Included Components
-+ [IBM Cloud Investment Portfolio]((https://console.ng.bluemix.net/catalog/services/investment-portfolio))
++ [IBM Cloud Investment Portfolio](https://console.ng.bluemix.net/catalog/services/investment-portfolio)
 + [IBM Cloud Instrument Analytics](https://console.bluemix.net/catalog/services/instrument-analytics)
 
 **Note:** these services are free for those who have a Lite account
