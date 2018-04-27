@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/IBM/Portfolio-compute.svg?branch=master)](https://travis-ci.org/IBM/Portfolio-compute)
-![IBM Cloud Deployments](https://metrics-tracker.mybluemix.net/stats/92bf5d7154053d269fdfde08702e6779/badge.svg)
+
 
 # Portfolio Analytics Computation
 
@@ -37,7 +37,7 @@ Use the ``Deploy to IBM Cloud`` button **OR** create the services and run ``Run 
 
 Create an [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps) and directly deploy the application using the button bellow.
 
-[![Deploy to Bluemix](https://metrics-tracker.mybluemix.net/stats/92bf5d7154053d269fdfde08702e6779/button.svg)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/IBM/Portfolio-compute)
+[![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/Portfolio-compute)
 
 
 # Running the Application Locally
@@ -172,30 +172,6 @@ cf logs <application-name> --recent
 python InvestmentPortfolio.py
 python InstrumentAnalytics.py
 ```
-
-## Privacy Notice
-
-This web application includes metrics tracker package configured to track deployments to [IBM Cloud](https://www.bluemix.net/) and other platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
-
-* Python package version
-* Python repository URL
-* Application Name (`application_name`)
-* Application GUID (`application_id`)
-* Application instance index number (`instance_index`)
-* Space ID (`space_id`) or OS username
-* Application Version (`application_version`)
-* Application URIs (`application_uris`)
-* Cloud Foundry API (`cf_api`)
-* Labels and names of bound services
-* Number of instances for each bound service and associated plan information
-* Metadata in the `repository.yaml` file
-
-This data is collected from the `run.py` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Cloud and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Cloud to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
-
-
-### Disabling Deployment Tracking
-
-To disable tracking, simply remove ``metrics_tracker_client.track()`` from the ``run.py`` file in the top level directory.
 
 
 # License

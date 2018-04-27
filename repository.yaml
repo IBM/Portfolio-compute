@@ -1,9 +1,0 @@
-id: Portfolio-Compute
-event_id: web
-event_organizer: dev-journeys
-runtimes: 
-  - Cloud Foundry
-services: 
-  - Investment Portfolio
-  - Instrument Analytics
-language: python
