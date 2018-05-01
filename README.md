@@ -44,8 +44,9 @@ Create an [IBM Cloud account](https://console.bluemix.net/registration/?target=%
 Follow these steps to setup and run this developer journey. The steps are described in detail below.
 
 ## Prerequisites
-- [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps)
 - [Python](https://www.python.org/downloads/)
+- [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps)
+- [IBM Cloud CLI](https://console.bluemix.net/docs/cli)
 
 ## Steps to run locally
 1. [Clone the repo](#1-clone-the-repo)
@@ -127,9 +128,18 @@ In your terminal, cd into this project's root directory
 + Run `python run.py`
 + Access the running app in a browser at <http://0.0.0.0:8080/>
 
+You can push the app to IBM Cloud using [IBM Cloud CLI](https://console.bluemix.net/docs/cli). This will use the services and application name in the `manifest.yml` file.  From your root directory login into IBM Cloud using CLI:
+```
+bx login
+```
+And push the app to IBM Cloud:
+```
+bx push
+```
+
 ## 6. Upload Holdings
 
-Once the application is running, the first step is to upload a file that will be used to create a portfolio or a series of portfolios in the Investment Portfolio service. We use the file format of the Algorithmics Risk Service (ARS) import file as many production clients are already used to that format. You can find an example file in this repo labelled "Blue Chip Portfolio". Alternatively, the file `ICFS_SAMPLE_POSITIONS.csv contains the superset of instruments that the Instrument Analytics service supports.
+Once the application is running, the first step is to upload a file that will be used to create a portfolio or a series of portfolios in the Investment Portfolio service. We use the file format of the Algorithmics Risk Service (ARS) import file as many production clients are already used to that format. You can find an example file in this repo labelled "Blue Chip Portfolio". Alternatively, the file `ICFS_SAMPLE_POSITIONS.csv` contains the superset of instruments that the Instrument Analytics service supports.
 
 - The column labeled "UNIQUE ID" must refer to the unique identifier of the asset in our system.
 - The "NAME" column will hold the display name of the asset.
@@ -163,7 +173,7 @@ Some notes:
 * To troubleshoot your IBM Cloud application, use the logs. To see the logs, run:
 
 ```bash
-cf logs <application-name> --recent
+bx logs <application-name> --recent
 ```
 
 * If you are running locally - inspect your environment variables closely to confirm they match.  Try running each service as standalone:
