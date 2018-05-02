@@ -35,7 +35,7 @@ Use the ``Deploy to IBM Cloud`` button **OR** create the services and run ``Run 
 
 # Deploy to IBM Cloud
 
-Create an [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps) and directly deploy the application using the button bellow.
+Create an [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps) and directly deploy the application using the button below.
 
 [![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/Portfolio-compute)
 
