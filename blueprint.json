@@ -1,6 +1,8 @@
 {
     "name": "Computing Analytics on an Investment Portfolio",
     "description": "Access full revaluation models to compute fair price and sensitivities on financial securities.",
+    "thumbnailURL": "blueprint/thumbnail.svg",
+    "appIconURL": "blueprint/appicon.svg",
     "previewURLs": [],
     "type": "WEB",
     "tags": [
