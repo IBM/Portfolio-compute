@@ -3,7 +3,6 @@
     "description": "Access full revaluation models to compute fair price and sensitivities on financial securities.",
     "thumbnailURL": "blueprint/thumbnail.svg",
     "appIconURL": "blueprint/appicon.svg",
-    "previewURLs": [],
     "type": "WEB",
     "tags": [
         "devex"
@@ -19,21 +18,21 @@
     },
     "generatorOptions": {
         "generator-git-starterkit-credentials-builder": {
-            "scope": "@arf",
-            "version": "0.x.x"
-        },
-        "generator-starterkit-content-downloader": {
-            "scope": "@arf",
-            "version": "0.x.x"
+            "version": "0.x.x",
+            "scope": "@arf"
         },
         "generator-ibm-cloud-enablement": {
-          "version": "0.8.x",
-          "options": {
-            "port": "3000"
-          }
+            "version": "1.0.x",
+            "options": {
+                "port": "3000"
+            }
         },
         "generator-ibm-service-enablement": {
-          "version": "0.6.4"
+            "version": "2.3.x"
+        },
+        "generator-starterkit-content-downloader": {
+            "version": "0.x.x",
+            "scope": "@arf"
         }
     },
     "requiredCapabilities": [
