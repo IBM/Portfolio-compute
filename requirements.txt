@@ -3,4 +3,5 @@ requests==2.11.1
 python-dotenv
 ibmcloudenv
 livereload
-gunicorn
+gunicorn==19.7.1
+#
