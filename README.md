@@ -24,8 +24,8 @@ This code pattern is designed for developers with interest in creating financial
 3. The portfolio and analytic choices are sent to the Instrument Analytics service. Computational results are returned to the browser or downloaded in CSV format.
 
 ## Included Components
-+ [IBM Cloud Investment Portfolio](https://console.ng.bluemix.net/catalog/services/investment-portfolio)
-+ [IBM Cloud Instrument Analytics](https://console.bluemix.net/catalog/services/instrument-analytics)
++ [IBM Cloud Investment Portfolio](https://cloud.ibm.com/catalog/services/investment-portfolio)
++ [IBM Cloud Instrument Analytics](https://cloud.ibm.com/catalog/services/instrument-analytics)
 
 **Note:** these services are free for those who have a Lite account
 
@@ -35,9 +35,9 @@ Use the ``Deploy to IBM Cloud`` button **OR** create the services and run ``Run 
 
 # Deploy to IBM Cloud
 
-Create an [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps) and directly deploy the application using the button below.
+Create an [IBM Cloud account](https://cloud.ibm.com/registration/?target=%2Fdashboard%2Fapps) and directly deploy the application using the button below.
 
-[![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/Portfolio-compute)
+[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/IBM/Portfolio-compute)
 
 
 # Running the Application Locally
@@ -45,8 +45,8 @@ Follow these steps to setup and run this developer journey. The steps are descri
 
 ## Prerequisites
 - [Python](https://www.python.org/downloads/)
-- [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps)
-- [IBM Cloud CLI](https://console.bluemix.net/docs/cli)
+- [IBM Cloud account](https://cloud.ibm.com/registration/?target=%2Fdashboard%2Fapps)
+- [IBM Cloud CLI](https://cloud.ibm.com/docs/cli)
 
 ## Steps to run locally
 1. [Clone the repo](#1-clone-the-repo)
@@ -61,14 +61,14 @@ Follow these steps to setup and run this developer journey. The steps are descri
 
 Clone the `Portfolio Analytics Computation code` locally. In a terminal, run:
 
-  `$ git clone https://github.com/IBM/Portfolio-compute.git`
+  `$ git clone https://github.com/IBM/Portfolio-compute`
 
 ## 2. Create IBM Cloud services
 
 Create the following services in IBM Cloud. These services are part of either `Free` or `Experimental` plan.
 
-* [**Investment Portfolio**](https://console.ng.bluemix.net/catalog/services/investment-portfolio)
-* [**Instrument Analytics**](https://console.bluemix.net/catalog/services/instrument-analytics)
+* [**Investment Portfolio**](https://cloud.ibm.com/catalog/services/investment-portfolio)
+* [**Instrument Analytics**](https://cloud.ibm.com/catalog/services/instrument-analytics)
 
 ## 3. Configure Manifest file
 
@@ -103,7 +103,7 @@ Create a `.env` file in the root directory of your clone of the project reposito
   cp .env.example .env
   ```
 
-  **NOTE** Most files systems regard files with a "." at the front as hidden files.  If you are on a Windows system, you should be able to use either [GitBash](https://git-for-windows.github.io/) or [Xcopy](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/xcopy)
+  **NOTE** Most files systems regard files with a "." at the front as hidden files.  If you are on a Windows system, you should be able to use either [GitBash](https://gitforwindows.org/) or [Xcopy](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/xcopy)
 
 You will need to update the credentials with the IBM Cloud credentials for each of the services you created in [Step 2](#2-create-ibm-cloud-services).
 
@@ -128,7 +128,7 @@ In your terminal, cd into this project's root directory
 + Run `python run.py`
 + Access the running app in a browser at <http://0.0.0.0:8080/>
 
-You can push the app to IBM Cloud using [IBM Cloud CLI](https://console.bluemix.net/docs/cli). This will use the services and application name in the `manifest.yml` file.  From your root directory login into IBM Cloud using CLI:
+You can push the app to IBM Cloud using [IBM Cloud CLI](https://cloud.ibm.com/docs/cli). This will use the services and application name in the `manifest.yml` file.  From your root directory login into IBM Cloud using CLI:
 ```
 bx login
 ```
@@ -186,6 +186,6 @@ python InstrumentAnalytics.py
 
 # License
 
-This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](http://www.apache.org/licenses/LICENSE-2.0.txt).
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
-[Apache Software License (ASL) FAQ](http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
+[Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
